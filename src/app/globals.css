@@ -2,26 +2,252 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* <main>
+      <div className="main-container-div">
+        <div className="header-div"></div>
+        <div className="logo-ticker-div"></div>
+        <div className="title-div">
+          <div className="title-selection-div"></div>
+          <div className="title-selection-div"></div>
+        </div>
+        <div className="bio-div"></div>
+      </div>
+    </main> */
+
+/* main page divs */
+
+
+.main-container-div{
+  background-color: blue;
+  height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.header-div{
+  height: 600px;
+  background-image: url('/speaking-img.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.title-div{
+  height: 200px;
+  display: flex;
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  
+}
+
+.ticker-wrapper{
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo-ticker-div{
+  height: 70px;
+  background-color: rgb(187, 187, 187);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300%;
+  animation-name: ticker;
+  animation-duration: 35s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0%); /* Start offscreen to the right */
+  }
+  100% {
+    transform: translateX(-50%); /* Scroll to the left */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.title-selection-div{
+  background-color: rgb(0, 0, 0);
+  height: 100%;
+  width: 50%;
+  font-weight: 100;
+  border-bottom: 1px solid black;
+
+}
+
+
+
+.title-selection-text-div{
+  margin-top: 20px;
+}
+
+.bio-div{
+  height: 300px;
+  background-color: rgb(232, 232, 232);
+  color: black;
+  padding: 50px;
+}
+
+.arrow-container-div{
+  background-color: rgb(232, 232, 232);
+  width: 100%;
+}
+
+.section-header-div{
+  background-color: rgb(0, 0, 0);
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-div{
+  text-align: center;
+}
+
+.company-item-div{
+  min-height: 100px;
+  display: flex;
+}
+
+#company-item-seatgeek{
+  background-color: aliceblue;
+  border-bottom: 1px solid black;
+}
+#company-item-current{
+  background-color: aliceblue;
+  border-bottom: 1px solid black;
+}
+#company-item-sundays{
+  background-color: aliceblue;
+}
+
+#seatgeek-logo-div{
+  width: 50%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff5b49;
+}
+#seatgeek-logo{
+  max-height: 300px;
+}
+
+#current-logo-div{
+  width: 50%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+#current-logo{
+  max-height: 300px;
+  width: 50%;
+}
+
+#sundays-logo-div{
+  width: 50%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2df80;
+}
+#current-logo{
+  max-height: 300px;
+  width: 50%;
+}
+
+.company-desc-div{
+  width: 50%;
+  display: flex;
+}
+
+.company-desc-item{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+}
+
+#company-desc-sundays{
+  width: 100%;
+}
+
+/* text */
+
+.header-name{
+  color: white;
+  font-size: 100px;
+  margin-left: 50px;
+  font-weight: 300;
+  text-shadow: rgb(0, 0, 0) 5px 0 10px;
+}
+
+#header-first-name{
+  
+}
+
+#header-last-name{
+  font-size: 80px;
+  font-weight: 100;
+}
+
+.bio-text{
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.section-header-text{
+  color: white;
+  font-size: 75px;
+  font-weight: 100;
+}
+
+
+
+.ticker-img{
+  height: 80%;
+  margin-left: 200px;
+}
+
+#ticker-img-flatiron{
+  height: 110%;
+}
+
+.title-selection-plus{
+  color: white;
+  display: flex;
+  font-size: 100px;
+  background: linear-gradient(to right, rgb(232, 232, 232) 50%, black 50%);
+  font-weight: 200;
+  align-items: center;
+  border-bottom: 1px solid black;
+
+}
+
+
+
+#selected-title{
+  background-color: rgb(232, 232, 232);
+  color: black;
+}
+
+.title-arrow{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 50px 0 50px;
+  margin-left: 20%;
+  border-color: #000000 transparent transparent transparent;
 }
